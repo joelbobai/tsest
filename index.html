@@ -10,7 +10,7 @@
 <body>
   <button class="btn btn-success mt-3 float-right" onclick="Send_Email()">Send Email</button>
   <script>
-    
+    const Send_Email = () => {
   axios
     .post(
       "https://mail-lilac.vercel.app/sendmail",
