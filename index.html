@@ -5,8 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-  <h1></h1>
+  <button class="btn btn-success mt-3 float-right" onclick="Send_Email()">Send Email</button>
+  <script>
+    
+  axios
+    .post(
+      "https://mail-lilac.vercel.app/sendmail",
+      {
+        sendFrom: "info@dubaigreenproperties.com",
+        sendTo: "joelbobai43@gmail.com",
+        sendSubject: "DUBAI GREEN",
+        sendHtml: "dnd",
+      },
+      {
+        header: {
+          'Accept': "application/json,text/plain,*/*",
+          "Content-Type": "application/json",
+          'Authorization':
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImhleSIsImlhdCI6MTY3NDI2ODY1Nn0.jgTff5dLSCt20fSQeuxWiTYy5SCQcYoous3wUZip-Zg",
+        },
+      }
+    )
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+
+ 
+};
+
+   </script>
 </body>
 </html>
